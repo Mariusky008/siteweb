@@ -75,14 +75,23 @@ function animateOnScroll() {
 window.addEventListener('load', animateOnScroll);
 window.addEventListener('scroll', animateOnScroll);
 
-// Effet de parallaxe léger pour le hero
+// Effet de parallaxe léger pour le hero (désactivé sur mobile)
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    const rate = scrolled * -0.5;
-    
-    if (hero) {
-        hero.style.transform = `translateY(${rate}px)`;
+    // Vérifier si on est sur mobile
+    if (window.innerWidth > 768) {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        const rate = scrolled * -0.5;
+        
+        if (hero) {
+            hero.style.transform = `translateY(${rate}px)`;
+        }
+    } else {
+        // Réinitialiser la transformation sur mobile
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            hero.style.transform = 'translateY(0px)';
+        }
     }
 });
 
