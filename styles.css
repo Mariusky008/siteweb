@@ -412,8 +412,9 @@ body {
 /* === CARTES FLOTTANTES HERO === */
 .hero-visual {
     position: relative;
-    height: 500px;
+    height: 600px;
     width: 100%;
+    overflow: visible;
 }
 
 .floating-card {
@@ -453,22 +454,84 @@ body {
     z-index: 3;
 }
 
-/* Carte 3: Interactions (bas gauche - processus) */
+/* Carte 3: Interactions (bas gauche - processus) - Alignée avec le haut de la carte 4 */
 .card-3 {
-    bottom: 20px;
+    bottom: 140px;
     left: 20px;
     width: 240px;
     animation-delay: 1s;
     z-index: 2;
 }
 
-/* Carte 4: Résultats (bas droite - conclusion) */
+/* Carte 4: Résultats (bas droite - conclusion) - Position équilibrée */
 .card-4 {
-    bottom: 20px;
+    bottom: 60px;
     right: 20px;
     width: 220px;
     animation-delay: 1.5s;
     z-index: 1;
+    /* Style distinctif avec bon contraste */
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%) !important;
+    border: 2px solid #065F46;
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.card-4:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(16, 185, 129, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.card-4 .card-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-4 .card-title {
+    color: white !important;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-4 .card-status.success {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #065F46 !important;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+.card-4 .card-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px;
+    backdrop-filter: blur(10px);
+}
+
+.card-4 .result-number {
+    color: #ffffff !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.card-4 .result-label {
+    color: #f0fdf4 !important;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    font-size: 10px;
+}
+
+.card-4 .results-grid {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-radius: 8px;
+    padding: var(--space-2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-4 .result-item {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 6px;
+    padding: var(--space-1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Suppression de la carte 5 (Popey) */
@@ -1583,6 +1646,36 @@ body {
     line-height: 1.6;
 }
 
+/* Styles pour la section impact avec image - taille modérée */
+.impact-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mission-image-container {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition-normal);
+    max-width: 350px; /* Taille modérée pour ne pas déformer */
+    width: 100%;
+}
+
+.mission-image-container:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}
+
+.mission-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 1024px) {
     .hero-container {
@@ -1748,6 +1841,22 @@ body {
         font-size: 8px;
     }
     
+    /* Responsive pour maintenir l'équilibre */
+    .impact-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+        text-align: center;
+    }
+    
+    .mission-image-container {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .impact-text .section-title {
+        text-align: center;
+    }
+    
     /* Responsive pour la vidéo */
     .video-container {
         max-width: 90%;
@@ -1793,10 +1902,13 @@ body {
     
     .hero-visual {
         height: auto;
+        min-height: 600px;
         display: flex;
         flex-direction: column;
         gap: var(--space-4);
         padding: var(--space-4);
+        position: relative;
+        overflow: visible;
     }
     
     .hero-visual::before,
@@ -1805,29 +1917,23 @@ body {
     }
     
     .floating-card {
-        position: relative;
+        position: relative !important;
         top: auto !important;
         left: auto !important;
         right: auto !important;
         bottom: auto !important;
         width: 100% !important;
-        max-width: 320px;
-        margin: 0 auto;
+        max-width: 340px;
+        margin: 0 auto var(--space-4);
         animation: none;
+        transform: none !important;
     }
     
-    /* Ordre de lecture sur mobile */
+    /* Ordre de lecture logique sur mobile */
     .card-1 { order: 1; }
     .card-2 { order: 2; }
     .card-3 { order: 3; }
     .card-4 { order: 4; }
-    
-    .card-1, .card-2, .card-3, .card-4, .card-5 {
-        position: relative;
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1840,38 +1946,46 @@ body {
     }
     
     .hero-visual {
-        height: 300px;
-    }
-    
-    .floating-card {
-        width: 140px !important;
+        min-height: 500px;
         padding: var(--space-3);
     }
     
-    /* Responsive pour les nouvelles cartes */
-    .hero-visual {
-        height: 400px;
-    }
-    
     .floating-card {
-        position: relative;
-        margin-bottom: var(--space-4);
-        animation: none;
+        max-width: 300px;
+        padding: var(--space-4);
+        margin: 0 auto var(--space-3);
     }
     
-    .card-1, .card-2, .card-3, .card-4 {
-        position: relative;
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto var(--space-4);
+    .card-title {
+        font-size: 16px;
+    }
+    
+    .card-content {
+        font-size: 14px;
+    }
+    
+    .card-number {
+        font-size: 24px;
+    }
+    
+    .results-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-2);
+    }
+    
+    .result-item:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: 120px;
     }
     
     .section-header {
         margin-bottom: var(--space-12);
+    }
+    
+    .mission-image-container {
+        max-width: 240px;
     }
     
     .video-container {
