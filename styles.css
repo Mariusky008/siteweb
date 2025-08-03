@@ -2016,6 +2016,14 @@ body {
         margin-bottom: var(--space-4);
     }
     
+    .card-step-number {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
+    }
+
+}
+    
     /* Responsive pour les vidéos */
     .talent-video {
         height: 160px;
@@ -2066,7 +2074,7 @@ body {
     .talent-profile h3 {
         font-size: 20px;
     }
-}
+
 
 @media (max-width: 480px) {
     .container {
@@ -2134,6 +2142,20 @@ body {
         margin-bottom: var(--space-4);
     }
     
+    /* Responsive pour les numéros */
+    .card-step-number {
+        position: static;
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+        margin-bottom: var(--space-3);
+        align-self: flex-start;
+        background: var(--neutral-700);
+    }
+    
+    .card-step-number::before {
+        display: none;
+    }
 
 }
 
@@ -2183,6 +2205,50 @@ body {
 .floating-card.card-3:hover { z-index: 13 !important; }
 .floating-card.card-4:hover { z-index: 12 !important; }
 .floating-card.card-5:hover { z-index: 11 !important; }
+
+/* Numéros de déroulement pour les cartes flottantes - Version épurée */
+.card-step-number {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 32px;
+    height: 32px;
+    background: var(--neutral-800);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: var(--shadow-md);
+    border: 3px solid white;
+    z-index: 10;
+    font-family: var(--font-display);
+    transition: var(--transition-normal);
+}
+
+.floating-card:hover .card-step-number {
+    background: var(--primary-600);
+    transform: scale(1.1);
+}
+
+/* Animation subtile au lieu du pulse */
+.card-step-number::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: var(--neutral-800);
+    z-index: -1;
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.floating-card:hover .card-step-number::before {
+    opacity: 0.2;
+    transform: scale(1.3);
+}
 
 /* Styles pour les boutons dans les cartes d'expérience */
 .card-action {
@@ -2627,4 +2693,74 @@ body {
     font-size: 12px;
     color: var(--neutral-600);
     line-height: 1.3;
+}
+
+/* Styles pour les images dans les cartes talents - Version agrandie */
+.talent-card.expanded {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: var(--space-6);
+    align-items: start;
+}
+
+.talent-image-container {
+    width: 280px;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.talent-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-normal);
+}
+
+.talent-image-container:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+}
+
+.talent-image:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive pour les images talents agrandies */
+@media (max-width: 1200px) {
+    .talent-image-container {
+        width: 240px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .talent-card.expanded {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .talent-image-container {
+        width: 100%;
+        max-width: 400px;
+        height: 220px;
+        margin: 0 auto;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .talent-image-container {
+        height: 200px;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .talent-image-container {
+        height: 180px;
+        max-width: 100%;
+    }
 }
