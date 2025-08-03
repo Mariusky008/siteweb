@@ -1,4 +1,4 @@
-
+/* === RESET & VARIABLES MODERNES === */
 * {
     margin: 0;
     padding: 0;
@@ -984,13 +984,88 @@ body {
 
 .section-badge {
     display: inline-block;
-    padding: var(--space-2) var(--space-4);
-    background: var(--primary-100);
-    color: var(--primary-700);
+    padding: var(--space-3) var(--space-6);
+    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+    color: white;
     border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--primary-300);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    animation: badgeAppear 0.6s ease-out;
+}
+
+.section-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: var(--transition-normal);
+}
+
+.section-badge:hover::before {
+    left: 100%;
+}
+
+.section-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+/* Badges spécifiques pour différencier les sections */
+.experience .section-badge {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    border-color: #6EE7B7;
+}
+
+.experience .section-badge::after {
+    content: '☕';
+    margin-left: var(--space-2);
     font-size: 14px;
-    font-weight: 600;
-    margin-bottom: var(--space-4);
+}
+
+.talents .section-badge {
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    border-color: #C4B5FD;
+}
+
+.talents .section-badge::after {
+    content: '🚀';
+    margin-left: var(--space-2);
+    font-size: 14px;
+}
+
+.impact .section-badge {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    border-color: #FCD34D;
+}
+
+.impact .section-badge::after {
+    content: '💡';
+    margin-left: var(--space-2);
+    font-size: 14px;
+}
+
+/* Animation d'apparition pour les badges */
+@keyframes badgeAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .section-title {
@@ -1934,6 +2009,63 @@ body {
     .card-2 { order: 2; }
     .card-3 { order: 3; }
     .card-4 { order: 4; }
+    
+    .section-badge {
+        font-size: 14px;
+        padding: var(--space-2) var(--space-4);
+        margin-bottom: var(--space-4);
+    }
+    
+    /* Responsive pour les vidéos */
+    .talent-video {
+        height: 160px;
+    }
+    
+    .talent-avatar-overlay .talent-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    /* Responsive pour la page talents */
+    /* Responsive pour la page talents */
+    .talents-page {
+        padding: var(--space-16) 0;
+    }
+    
+    .page-header {
+        padding-top: var(--space-8);
+        margin-bottom: var(--space-12);
+    }
+    
+    .page-header h1 {
+        font-size: 36px;
+    }
+    
+    .page-header p {
+        font-size: 16px;
+        padding: 0 var(--space-4);
+    }
+    
+    .talents-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        padding: 0 var(--space-4);
+    }
+    
+    .talent-profile {
+        padding: var(--space-6);
+    }
+    
+    .talent-profile .talent-avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .talent-profile h3 {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1995,6 +2127,14 @@ body {
     .concept-video {
         max-height: 200px;
     }
+    
+    .section-badge {
+        font-size: 14px;
+        padding: var(--space-2) var(--space-4);
+        margin-bottom: var(--space-4);
+    }
+    
+
 }
 
 /* === ANIMATIONS AVANCÉES === */
@@ -2043,6 +2183,251 @@ body {
 .floating-card.card-3:hover { z-index: 13 !important; }
 .floating-card.card-4:hover { z-index: 12 !important; }
 .floating-card.card-5:hover { z-index: 11 !important; }
+
+/* Styles pour les boutons dans les cartes d'expérience */
+.card-action {
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--neutral-200);
+}
+
+.btn-card-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-card-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+}
+
+.btn-card-primary svg {
+    transition: var(--transition-fast);
+}
+
+.btn-card-primary:hover svg {
+    transform: translateX(2px);
+}
+
+/* Responsive pour les boutons de carte */
+@media (max-width: 768px) {
+    .btn-card-primary {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-4) var(--space-6);
+    }
+}
+
+/* Styles pour les vidéos de présentation des talents */
+.talent-video-container {
+    position: relative;
+    margin-bottom: var(--space-6);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--neutral-100);
+}
+
+.talent-video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    transition: var(--transition-normal);
+}
+
+.talent-video:hover {
+    transform: scale(1.02);
+}
+
+.talent-avatar-overlay {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    z-index: 2;
+}
+
+.talent-avatar-overlay .talent-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border: 3px solid white;
+    box-shadow: var(--shadow-lg);
+}
+
+/* === PAGE TALENTS === */
+.talents-page {
+    padding: var(--space-24) 0;
+    background: var(--neutral-50);
+    min-height: 100vh;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: var(--space-16);
+    padding-top: var(--space-16);
+}
+
+.page-header h1 {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin-bottom: var(--space-4);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-header p {
+    font-size: 18px;
+    color: var(--neutral-600);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.talents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.talent-profile {
+    background: white;
+    border-radius: 24px;
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--neutral-200);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.talent-profile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.talent-profile:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-300);
+}
+
+.talent-profile .talent-avatar {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: var(--space-6);
+}
+
+.talent-profile h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--neutral-900);
+    margin-bottom: var(--space-2);
+}
+
+.talent-specialty {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-600);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-4);
+    padding: var(--space-1) var(--space-3);
+    background: var(--primary-100);
+    border-radius: 12px;
+    display: inline-block;
+}
+
+.talent-description {
+    color: var(--neutral-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+    font-size: 15px;
+}
+
+.talent-projects {
+    margin-bottom: var(--space-8);
+}
+
+.talent-projects h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--neutral-800);
+    margin-bottom: var(--space-3);
+}
+
+.talent-projects ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.talent-projects li {
+    padding: var(--space-2) 0;
+    color: var(--neutral-600);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.talent-projects li:not(:last-child) {
+    border-bottom: 1px solid var(--neutral-100);
+}
+
+.talent-contact {
+    text-align: center;
+}
+
+.btn-contact {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: var(--space-3) var(--space-8);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+    width: 100%;
+}
+
+.btn-contact:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+}
 
 /* === TALENT CARD EXPANDED STYLES === */
 .talent-card.expanded {
