@@ -1863,8 +1863,24 @@ body {
         display: none;
     }
     
+    .nav-menu.active {
+        display: flex;
+    }
+    
     .mobile-menu-toggle {
         display: flex;
+    }
+    
+    .hero {
+        padding-top: 120px; /* Augmenté de 80px à 120px */
+    }
+    
+    .hero-title {
+        margin-top: var(--space-6); /* Ajouter une marge supplémentaire */
+    }
+    
+    .hero-container {
+        padding-top: var(--space-4); /* Padding supplémentaire pour le conteneur */
     }
     
     .hero-actions {
