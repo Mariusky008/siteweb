@@ -1872,8 +1872,11 @@ body {
     }
     
     .hero {
-        padding-top: 120px; /* Augmenté de 80px à 120px */
-        margin-bottom: 0; /* Assure qu'il n'y a pas de marge supplémentaire */
+        min-height: auto !important;
+        padding-top: 120px !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+        transform: translateY(0px) !important; /* Force la position */
     }
     
     .hero-title {
