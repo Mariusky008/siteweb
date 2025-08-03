@@ -720,11 +720,11 @@ body {
 }
 
 .interaction-item {
-    font-size: 11px;
+    font-size: 16px;
     color: var(--neutral-600);
     background: var(--neutral-50);
     padding: var(--space-1) var(--space-2);
-    border-radius: 6px;
+    border-radius: 7px;
 }
 
 .results-grid {
@@ -771,7 +771,7 @@ body {
 
 /* === SECTION CONCEPT POPEY === */
 .concept-section {
-    padding: var(--space-24) 0;
+    padding: var(--space-8) 0;
     background: linear-gradient(135deg, var(--neutral-50) 0%, var(--primary-50) 100%);
     position: relative;
     overflow: hidden;
@@ -1880,11 +1880,11 @@ body {
     }
     
     .hero-title {
-        margin-top: var(--space-6); /* Ajouter une marge supplémentaire */
+        margin-top: var(--space-6);
     }
     
     .hero-container {
-        padding-top: var(--space-4); /* Padding supplémentaire pour le conteneur */
+        padding-top: var(--space-4);
     }
     
     .hero-actions {
@@ -2025,15 +2025,15 @@ body {
     
     .hero-visual {
         height: auto;
-        min-height: 250px; /* Réduit drastiquement */
+        min-height: 200px !important;
         display: flex;
         flex-direction: column;
         gap: var(--space-4);
         padding: var(--space-4);
         position: relative;
         overflow: visible;
-        margin-bottom: 0; /* Supprime la marge en bas */
-        padding-bottom: 0;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
     }
     
     .hero-visual::before,
@@ -2049,9 +2049,13 @@ body {
         bottom: auto !important;
         width: 100% !important;
         max-width: 340px;
-        margin: 0 auto var(--space-4);
+        margin: 0 auto var(--space-2);
         animation: none;
         transform: none !important;
+    }
+    
+    .floating-card:last-child {
+        margin-bottom: 0;
     }
     
     /* Ordre de lecture logique sur mobile */
@@ -2070,6 +2074,16 @@ body {
         width: 24px;
         height: 24px;
         font-size: 12px;
+    }
+    
+    .concept-section {
+        padding: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    .concept-header {
+        margin-bottom: var(--space-8);
+        padding-top: var(--space-4);
     }
 
 }
@@ -2135,15 +2149,25 @@ body {
         padding: 0 var(--space-4);
     }
     
+    .hero {
+        padding-top: 100px;
+    }
+    
+    .hero-title {
+        margin-top: var(--space-4);
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+    
     .hero-visual {
-        min-height: 500px;
-        padding: var(--space-3);
+        min-height: 150px;
+        padding: var(--space-1);
+        padding-bottom: 0;
     }
     
     .floating-card {
         max-width: 300px;
         padding: var(--space-4);
-        margin: 0 auto var(--space-3);
+        margin: 0 auto var(--space-2);
     }
     
     .card-title {
@@ -2205,6 +2229,15 @@ body {
     
     .card-step-number::before {
         display: none;
+    }
+    
+    .concept-section {
+        padding: 0;
+    }
+    
+    .concept-header {
+        margin-bottom: var(--space-6);
+        padding-top: var(--space-2);
     }
 
 }
