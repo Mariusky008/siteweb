@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Thomas - Plateforme E-learning | Popey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="images/Popey!!.png" alt="Logo Popey" class="logo-icon">
+                        <span class="brand-text">Popey</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="talents.html">Talents</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-header">
+                <div class="project-info">
+                    <h1>Plateforme E-learning Interactive</h1>
+                    <p class="project-subtitle">Par Thomas - Expert en Formation Digitale</p>
+                    <div class="project-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="current">6 000€</span>
+                            <span class="target">/ 15 000€ collectés</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-video">
+                    <video controls poster="images/thomas-project.jpg">
+                        <source src="images/thomas-project.mp4" type="video/mp4">
+                        Présentation du projet
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Description -->
+    <section class="project-description">
+        <div class="container">
+            <h2>Description du Projet</h2>
+            <div class="description-content">
+                <p>Création d'une plateforme e-learning révolutionnaire qui utilise la réalité virtuelle et l'intelligence artificielle pour créer des expériences d'apprentissage immersives. La plateforme s'adresse aux entreprises et aux particuliers souhaitant développer leurs compétences professionnelles.</p>
+                
+                <h3>Fonctionnalités Innovantes :</h3>
+                <ul>
+                    <li>🥽 Modules de formation en réalité virtuelle</li>
+                    <li>🤖 Assistant IA personnalisé pour chaque apprenant</li>
+                    <li>📊 Analytics avancés de progression</li>
+                    <li>🎮 Gamification et système de récompenses</li>
+                    <li>👥 Collaboration en temps réel entre apprenants</li>
+                    <li>📱 Accessibilité multi-plateforme (Web, Mobile, VR)</li>
+                </ul>
+
+                <h3>Marché Cible :</h3>
+                <p>Entreprises de 50+ employés et professionnels en reconversion. Le marché de la formation digitale représente 8,2 milliards d'euros en France avec une croissance de 20% par an post-COVID.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Tiers -->
+    <section class="investment-tiers">
+        <div class="container">
+            <h2>Paliers d'Investissement</h2>
+            <div class="tiers-grid">
+                
+                <div class="tier-card">
+                    <div class="tier-amount">50€</div>
+                    <h3>Early Bird</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès gratuit pendant 3 mois</li>
+                        <li>✅ Certificat de formation offert</li>
+                        <li>✅ Retour estimé : 70€ (40% de gain)</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(50)">J'investis 50€</button>
+                </div>
+
+                <div class="tier-card popular">
+                    <div class="tier-badge">Recommandé</div>
+                    <div class="tier-amount">100€</div>
+                    <h3>Apprenant Pro</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès gratuit pendant 6 mois</li>
+                        <li>✅ Session de coaching personnalisée</li>
+                        <li>✅ Retour estimé : 150€ (50% de gain)</li>
+                        <li>✅ Accès prioritaire aux nouveaux cours</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(100)">J'investis 100€</button>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-amount">500€</div>
+                    <h3>Partenaire Formation</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès à vie à la plateforme</li>
+                        <li>✅ Création d'un cours personnalisé</li>
+                        <li>✅ Retour estimé : 800€ (60% de gain)</li>
+                        <li>✅ Commission sur les ventes (3%)</li>
+                        <li>✅ Accès aux outils de création</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(500)">J'investis 500€</button>
+                </div>
+
+                <div class="tier-card premium">
+                    <div class="tier-amount">1000€</div>
+                    <h3>Investisseur Stratégique</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Tous les avantages précédents</li>
+                        <li>✅ Retour estimé : 1700€ (70% de gain)</li>
+                        <li>✅ Participation aux décisions produit</li>
+                        <li>✅ Accès aux métriques business</li>
+                        <li>✅ Formation mensuelle avec Thomas</li>
+                        <li>✅ White-label de la plateforme</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(1000)">J'investis 1000€</button>
+                </div>
+
+                <div class="tier-card exclusive">
+                    <div class="tier-amount">2000€+</div>
+                    <h3>Co-Créateur</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Retour estimé : 80% de gain minimum</li>
+                        <li>✅ Participation aux bénéfices (3-7%)</li>
+                        <li>✅ Licence de revente dans votre région</li>
+                        <li>✅ Formation complète aux outils VR</li>
+                        <li>✅ Support technique prioritaire</li>
+                        <li>✅ Co-branding sur certains modules</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(2000)">J'investis 2000€+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Information -->
+    <section class="risk-info">
+        <div class="container">
+            <h2>Informations sur les Risques et Retours</h2>
+            <div class="risk-content">
+                <div class="risk-section">
+                    <h3>🎯 Retours Attendus</h3>
+                    <ul>
+                        <li>ROI estimé entre 40% et 80% sur 12-18 mois</li>
+                        <li>Modèle SaaS récurrent avec abonnements mensuels</li>
+                        <li>Revenus B2B plus stables que B2C</li>
+                        <li>Marché en forte croissance post-pandémie</li>
+                    </ul>
+                </div>
+                
+                <div class="risk-section">
+                    <h3>⚠️ Risques Identifiés</h3>
+                    <ul>
+                        <li>Concurrence avec les géants (LinkedIn Learning, Coursera)</li>
+                        <li>Coût élevé de développement VR</li>
+                        <li>Adoption lente de la VR en entreprise</li>
+                        <li>Dépendance aux partenariats technologiques</li>
+                        <li>Évolution rapide des technologies VR/AR</li>
+                    </ul>
+                </div>
+
+                <div class="risk-section">
+                    <h3>🛡️ Stratégies de Mitigation</h3>
+                    <ul>
+                        <li>Focus sur des niches spécialisées (formation sécurité, médical)</li>
+                        <li>Partenariats avec des fabricants VR (Oculus, HTC)</li>
+                        <li>Version web accessible sans VR</li>
+                        <li>Équipe technique expérimentée en VR/AR</li>
+                        <li>Clients pilotes déjà engagés</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Avertissement :</strong> Les investissements dans les startups technologiques présentent des risques élevés. Les projections de retour sont basées sur des études de marché et ne constituent pas une garantie. Investissez uniquement des montants que vous pouvez vous permettre de perdre.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function investAmount(amount) {
+            // Redirection vers une page de paiement ou modal
+            alert(`Redirection vers le paiement pour un investissement de ${amount}€`);
+            // window.location.href = `payment.html?amount=${amount}&project=thomas`;
+        }
+    </script>
+</body>
+</html>
