@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Vanessa - Application Fitness | Popey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="images/Popey!!.png" alt="Logo Popey" class="logo-icon">
+                        <span class="brand-text">Popey</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="talents.html">Talents</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-header">
+                <div class="project-info">
+                    <h1>Bougies Bio Artisanales</h1>
+                    <p class="project-subtitle">Par Vanessa - Artisane Éco-responsable</p>
+                    <div class="project-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="current">13 000€</span>
+                            <span class="target">/ 20 000€ collectés</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-video">
+                    <video controls poster="images/vanessa-project.jpg">
+                        <source src="images/vanessa-project.mp4" type="video/mp4">
+                        Présentation du projet
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Description -->
+    <section class="project-description">
+        <div class="container">
+            <h2>Description du Projet</h2>
+            <div class="description-content">
+                <p>Création d'une gamme de bougies artisanales 100% bio et éco-responsables. Utilisation exclusive de cires végétales (soja, coco), mèches en coton bio et huiles essentielles naturelles. Production locale avec emballages recyclables.</p>
+                
+                <h3>Gamme de Produits :</h3>
+                <ul>
+                    <li>🕯️ Bougies parfumées aux huiles essentielles</li>
+                    <li>🌿 Bougies thérapeutiques (relaxation, concentration)</li>
+                    <li>🎁 Coffrets cadeaux personnalisés</li>
+                    <li>🏠 Bougies décoratives pour événements</li>
+                    <li>♻️ Programme de recyclage des contenants</li>
+                    <li>📦 Abonnement mensuel "Bien-être"</li>
+                </ul>
+    
+                <h3>Marché Cible :</h3>
+                <p>Consommateurs soucieux de l'environnement, amateurs de bien-être et décoration naturelle. Le marché des bougies artisanales représente 2,1 milliards d'euros en France avec une croissance de 8% par an.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Tiers -->
+    <section class="investment-tiers">
+        <div class="container">
+            <h2>Paliers d'Investissement</h2>
+            <div class="tiers-grid">
+                
+                <div class="tier-card">
+                    <div class="tier-amount">50€</div>
+                    <h3>Supporter</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès gratuit à l'app pendant 6 mois</li>
+                        <li>✅ Badge "Early Supporter"</li>
+                        <li>✅ Retour estimé : 75€ (50% de gain)</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(50)">J'investis 50€</button>
+                </div>
+
+                <div class="tier-card popular">
+                    <div class="tier-badge">Populaire</div>
+                    <div class="tier-amount">100€</div>
+                    <h3>Investisseur</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès gratuit à l'app pendant 1 an</li>
+                        <li>✅ Session coaching privée avec Vanessa</li>
+                        <li>✅ Retour estimé : 160€ (60% de gain)</li>
+                        <li>✅ Accès aux fonctionnalités premium</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(100)">J'investis 100€</button>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-amount">500€</div>
+                    <h3>Partenaire</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès à vie à l'application</li>
+                        <li>✅ 3 sessions coaching privées</li>
+                        <li>✅ Retour estimé : 850€ (70% de gain)</li>
+                        <li>✅ Participation aux décisions produit</li>
+                        <li>✅ Commission sur les parrainages (2%)</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(500)">J'investis 500€</button>
+                </div>
+
+                <div class="tier-card premium">
+                    <div class="tier-amount">1000€</div>
+                    <h3>Co-Fondateur</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Tous les avantages précédents</li>
+                        <li>✅ Retour estimé : 1800€ (80% de gain)</li>
+                        <li>✅ Participation aux bénéfices (1%)</li>
+                        <li>✅ Accès aux métriques business</li>
+                        <li>✅ Coaching mensuel personnalisé</li>
+                        <li>✅ Nom dans les crédits de l'app</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(1000)">J'investis 1000€</button>
+                </div>
+
+                <div class="tier-card exclusive">
+                    <div class="tier-amount">2500€+</div>
+                    <h3>Investisseur VIP</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Retour estimé : 100% de gain minimum</li>
+                        <li>✅ Participation aux bénéfices (2-5%)</li>
+                        <li>✅ Accès exclusif aux nouvelles fonctionnalités</li>
+                        <li>✅ Coaching illimité avec Vanessa</li>
+                        <li>✅ Invitation aux événements exclusifs</li>
+                        <li>✅ Possibilité de co-création de contenu</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(2500)">J'investis 2500€+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Information -->
+    <section class="risk-info">
+        <div class="container">
+            <h2>Informations sur les Risques et Retours</h2>
+            <div class="risk-content">
+                <div class="risk-section">
+                    <h3>🎯 Retours Attendus</h3>
+                    <ul>
+                        <li>Retour sur investissement estimé entre 50% et 100% sur 18-24 mois</li>
+                        <li>Basé sur les projections de croissance du marché fitness digital</li>
+                        <li>Revenus générés par abonnements, achats in-app et partenariats</li>
+                        <li>Modèle économique validé par des apps similaires (MyFitnessPal, Nike Training)</li>
+                    </ul>
+                </div>
+                
+                <div class="risk-section">
+                    <h3>⚠️ Risques Identifiés</h3>
+                    <ul>
+                        <li>Concurrence forte sur le marché des apps fitness</li>
+                        <li>Dépendance aux stores d'applications (Apple, Google)</li>
+                        <li>Nécessité d'acquisition d'utilisateurs coûteuse</li>
+                        <li>Risque technologique lié au développement</li>
+                        <li>Évolution des réglementations sur les données de santé</li>
+                    </ul>
+                </div>
+
+                <div class="risk-section">
+                    <h3>🛡️ Mesures de Protection</h3>
+                    <ul>
+                        <li>Équipe de développement expérimentée déjà constituée</li>
+                        <li>Partenariats avec des salles de sport locales</li>
+                        <li>Stratégie marketing multi-canal définie</li>
+                        <li>Conformité RGPD et sécurité des données prioritaires</li>
+                        <li>Plan B : pivot vers le coaching en ligne si nécessaire</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Avertissement :</strong> Tout investissement comporte des risques. Les retours mentionnés sont des estimations basées sur des projections et ne constituent pas une garantie. Il est recommandé de ne jamais investir plus que ce que vous pouvez vous permettre de perdre.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function investAmount(amount) {
+            // Redirection vers une page de paiement ou modal
+            alert(`Redirection vers le paiement pour un investissement de ${amount}€`);
+            // window.location.href = `payment.html?amount=${amount}&project=vanessa`;
+        }
+    </script>
+</body>
+</html>
