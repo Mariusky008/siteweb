@@ -104,6 +104,18 @@ body {
     transition: var(--transition-normal);
 }
 
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.8;
+}
+
 .nav-container {
     max-width: 1280px;
     margin: 0 auto;
@@ -2702,82 +2714,282 @@ body {
     margin: 0 auto;
 }
 
+/* === NOUVEAU DESIGN TALENTS === */
+
+/* Structure principale */
 .talent-profile {
     background: white;
-    border-radius: 24px;
-    padding: var(--space-8);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--neutral-200);
-    transition: var(--transition-normal);
-    position: relative;
+    border-radius: 20px;
     overflow: hidden;
-}
-
-.talent-profile::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-primary);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--neutral-200);
 }
 
 .talent-profile:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-300);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.talent-profile .talent-avatar {
-    width: 80px;
-    height: 80px;
-    background: var(--gradient-primary);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-    box-shadow: var(--shadow-md);
-    margin-bottom: var(--space-6);
+.talent-info {
+    padding: var(--space-6);
 }
 
 .talent-profile h3 {
+    font-family: var(--font-display);
     font-size: 24px;
     font-weight: 700;
     color: var(--neutral-900);
-    margin-bottom: var(--space-2);
+    margin: 0 0 var(--space-2) 0;
 }
 
 .talent-specialty {
-    font-size: 14px;
-    font-weight: 600;
     color: var(--primary-600);
+    font-weight: 600;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: var(--space-4);
-    padding: var(--space-1) var(--space-3);
-    background: var(--primary-100);
-    border-radius: 12px;
-    display: inline-block;
+    margin: 0 0 var(--space-3) 0;
 }
 
 .talent-description {
     color: var(--neutral-600);
     line-height: 1.6;
-    margin-bottom: var(--space-6);
+    margin: 0 0 var(--space-6) 0;
     font-size: 15px;
 }
 
+/* Cagnotte Popey - Design uniforme */
+.talent-earnings {
+    background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+    border-radius: 16px;
+    padding: var(--space-4);
+    margin: 0 0 var(--space-4) 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.talent-earnings::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+}
+
+.earnings-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.earnings-icon {
+    font-size: 20px;
+}
+
+.earnings-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.earnings-amount {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 var(--space-1) 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.earnings-description {
+    font-size: 13px;
+    opacity: 0.9;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Avis clients - Design uniforme */
+.talent-reviews {
+    background: var(--neutral-50);
+    border: 2px solid var(--neutral-100);
+    border-radius: 16px;
+    padding: var(--space-4);
+    margin: 0 0 var(--space-4) 0;
+    transition: all var(--transition-fast);
+}
+
+.talent-reviews:hover {
+    border-color: var(--primary-200);
+    background: var(--primary-50);
+}
+
+.reviews-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.reviews-icon {
+    font-size: 20px;
+}
+
+.reviews-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--neutral-800);
+}
+
+.reviews-summary {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.rating-score {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--primary-600);
+    min-width: 50px;
+}
+
+.rating-details {
+    flex: 1;
+}
+
+.rating-stars {
+    font-size: 16px;
+    margin-bottom: var(--space-1);
+}
+
+.reviews-count {
+    font-size: 13px;
+    color: var(--neutral-500);
+    font-weight: 500;
+}
+
+/* Projet d'investissement */
+.talent-investment {
+    background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+    border-radius: 16px;
+    padding: var(--space-4);
+    margin: 0 0 var(--space-4) 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.talent-investment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(20px, -20px);
+}
+
+.investment-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.investment-icon {
+    font-size: 20px;
+}
+
+.investment-title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.investment-project h5 {
+    margin: 0 0 var(--space-3) 0;
+    font-size: 18px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.investment-progress {
+    margin: var(--space-3) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.investment-bar {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+    margin-bottom: var(--space-2);
+}
+
+.investment-fill {
+    background: linear-gradient(90deg, #10B981 0%, #34D399 100%);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.investment-amounts {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.current-amount {
+    color: #34D399;
+}
+
+.target-amount {
+    opacity: 0.8;
+}
+
+.btn-invest {
+    background: rgba(255, 255, 255, 0.9);
+    color: #1D4ED8;
+    border: none;
+    padding: var(--space-2) var(--space-4);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    width: 100%;
+    margin-top: var(--space-3);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-invest:hover {
+    background: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Projets actuels */
 .talent-projects {
-    margin-bottom: var(--space-8);
+    margin: var(--space-4) 0;
 }
 
 .talent-projects h4 {
     font-size: 16px;
     font-weight: 600;
     color: var(--neutral-800);
-    margin-bottom: var(--space-3);
+    margin: 0 0 var(--space-3) 0;
 }
 
 .talent-projects ul {
@@ -2787,40 +2999,48 @@ body {
 }
 
 .talent-projects li {
-    padding: var(--space-2) 0;
-    color: var(--neutral-600);
+    background: var(--neutral-50);
+    border: 1px solid var(--neutral-200);
+    border-radius: 10px;
+    padding: var(--space-2) var(--space-3);
+    margin-bottom: var(--space-2);
     font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
+    color: var(--neutral-700);
+    transition: all var(--transition-fast);
 }
 
-.talent-projects li:not(:last-child) {
-    border-bottom: 1px solid var(--neutral-100);
+.talent-projects li:hover {
+    background: var(--primary-50);
+    border-color: var(--primary-200);
+    transform: translateX(4px);
 }
 
+.talent-projects li:last-child {
+    margin-bottom: 0;
+}
+
+/* Bouton contact */
 .talent-contact {
-    text-align: center;
+    margin-top: var(--space-6);
 }
 
 .btn-contact {
     background: var(--gradient-primary);
     color: white;
     border: none;
-    padding: var(--space-3) var(--space-8);
+    padding: var(--space-3) var(--space-6);
     border-radius: 12px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
-    transition: var(--transition-normal);
-    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
     width: 100%;
+    box-shadow: 0 4px 12px rgba(242, 117, 10, 0.3);
 }
 
 .btn-contact:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+    box-shadow: 0 8px 20px rgba(242, 117, 10, 0.4);
 }
 
 /* === TALENT CARD EXPANDED STYLES === */
@@ -3023,6 +3243,10 @@ body {
     line-height: 1.3;
 }
 
+/* === NOUVELLES SECTIONS TALENTS === */
+
+
+
 /* Styles pour les images dans les cartes talents - Version agrandie */
 .talent-card.expanded {
     display: grid;
@@ -3091,4 +3315,494 @@ body {
         height: 180px;
         max-width: 100%;
     }
+}
+
+/* Bouton En savoir + */
+.btn-learn-more {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-learn-more:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-learn-more:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .talent-info {
+        padding: var(--space-4);
+    }
+    
+    .talent-earnings,
+    .talent-reviews,
+    .talent-investment {
+        margin: var(--space-3) 0;
+        padding: var(--space-3);
+    }
+    
+    .earnings-amount {
+        font-size: 28px;
+    }
+    
+    .rating-score {
+        font-size: 24px;
+    }
+    
+    .investment-project h5 {
+        font-size: 16px;
+    }
+}
+
+/* Styles pour les pages de projets */
+.project-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0 60px;
+}
+
+.project-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.project-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.project-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.progress-bar {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #4CAF50, #8BC34A);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+}
+
+.project-video video {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.project-description {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.description-content h3 {
+    color: #333;
+    margin: 30px 0 15px;
+    font-size: 1.4rem;
+}
+
+.description-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.description-content li {
+    padding: 8px 0;
+    font-size: 1.1rem;
+}
+
+.investment-tiers {
+    padding: 80px 0;
+    background: white;
+}
+
+.tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.tier-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.tier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.tier-card.popular {
+    border-color: #667eea;
+    transform: scale(1.05);
+}
+
+.tier-card.premium {
+    border-color: #764ba2;
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+}
+
+.tier-card.exclusive {
+    border-color: #ff6b6b;
+    background: linear-gradient(135deg, #fff8f8 0%, #fff0f0 100%);
+}
+
+.tier-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: #667eea;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tier-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tier-card h3 {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+}
+
+.tier-benefits {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.tier-benefits li {
+    padding: 8px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.btn-invest {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-invest:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.risk-info {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.risk-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.risk-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.risk-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.risk-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.risk-section li {
+    padding: 8px 0;
+    line-height: 1.6;
+}
+
+.disclaimer {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.disclaimer p {
+    margin: 0;
+    color: #856404;
+    line-height: 1.6;
+}
+
+/* Responsive pour les pages de projets */
+@media (max-width: 768px) {
+    .project-header {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .project-info h1 {
+        font-size: 2rem;
+    }
+    
+    .tiers-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tier-card.popular {
+        transform: none;
+    }
+    
+    .risk-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Amélioration des sections d'investissement dans talents.html */
+.talent-investment {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    color: white;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.talent-investment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+.investment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.investment-icon {
+    font-size: 24px;
+    margin-right: 12px;
+}
+
+.investment-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+}
+
+.investment-project {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.investment-project h5 {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.investment-progress {
+    margin-bottom: 20px;
+}
+
+.investment-bar {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.investment-fill {
+    background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+}
+
+.investment-amounts {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 14px;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.current-amount {
+    color: #8BC34A;
+    font-weight: 700;
+}
+
+.target-amount {
+    opacity: 0.9;
+}
+
+.btn-learn-more {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #667eea;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-learn-more:hover {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+    color: #5a67d8;
+}
+
+.btn-learn-more:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.talent-investment {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Styles pour les sections d'investissement des talents */
+.investment-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+}
+
+.investment-section h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.project-header h5 {
+    color: #2c3e50;
+    margin-bottom: 8px;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.project-description {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.funding-progress {
+    margin-bottom: 15px;
+}
+
+.funding-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+    transition: width 0.3s ease;
+}
+
+.progress-percentage {
+    font-size: 0.8em;
+    color: #6c757d;
+    text-align: center;
 }
