@@ -583,34 +583,71 @@ ul.nav-menu li {
     object-fit: cover;
 }
 
+/* === AJUSTEMENT BOUTON POUR ÉCRANS ORDINATEUR === */
+
+/* Styles par défaut pour ordinateur */
 .reveal-cards-btn {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 190px; /* Abaissé pour éviter le texte */
+    right: 20px; /* Positionné à droite */
+    left: auto;
+    top: auto;
+    transform: none;
     background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
     color: white;
-    border: none;
-    padding: 16px 32px;
-    border-radius: 50px;
-    font-size: 18px;
+    border: 2px solid white;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 10;
+    z-index: 15;
+    min-width: 120px;
+    backdrop-filter: blur(5px);
 }
 
 .reveal-cards-btn:hover {
-    transform: translate(-50%, -50%) translateY(-3px);
-    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.7);
     background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+    scale: 1.05;
 }
 
 .reveal-cards-btn:active {
-    transform: translate(-50%, -50%) translateY(-1px);
+    transform: translateY(-1px);
+    scale: 0.98;
+}
+
+/* Overlay réduit pour ordinateur */
+.clients-image-wrapper::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: 140px;
+    height: 70px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+    border-radius: 0 0 20px 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+/* Ajustements pour tablettes */
+@media (max-width: 1024px) {
+    .reveal-cards-btn {
+        bottom: 18px;
+        right: 18px;
+        padding: 12px 24px;
+        font-size: 15px;
+    }
+    
+    .clients-image-wrapper::before {
+        width: 120px;
+        height: 65px;
+    }
 }
 
 .btn-shine {
@@ -2352,6 +2389,8 @@ ul.nav-menu li {
     }
     
     .reveal-cards-btn {
+        bottom: 15px;
+        right: 15px;
         padding: 12px 24px;
         font-size: 16px;
     }
@@ -2562,14 +2601,15 @@ ul.nav-menu li {
         max-height: 500px;
     }
     
+    /* Corrections spécifiques pour mobile (garde le bon positionnement) */
     .reveal-cards-btn {
         position: absolute;
-        bottom: 15px; /* Réduit pour être plus près du bord */
-        right: 15px; /* Positionné à droite au lieu du centre */
-        left: auto; /* Supprime le centrage */
+        bottom: 15px;
+        right: 15px;
+        left: auto;
         top: auto;
-        transform: none; /* Supprime la transformation de centrage */
-        padding: 12px 24px; /* Réduit légèrement la taille */
+        transform: none;
+        padding: 12px 24px;
         font-size: 14px;
         font-weight: 600;
         border-radius: 25px;
@@ -2581,12 +2621,11 @@ ul.nav-menu li {
         transition: all 0.3s ease;
         z-index: 15;
         min-width: 100px;
-        /* Ajout d'un fond semi-transparent pour améliorer la lisibilité */
         backdrop-filter: blur(5px);
     }
     
     .reveal-cards-btn:hover {
-        transform: translateY(-2px); /* Animation simple vers le haut */
+        transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(102, 126, 234, 0.8);
         background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
         scale: 1.05;
@@ -2597,19 +2636,10 @@ ul.nav-menu li {
         scale: 0.98;
     }
     
-    /* Réduction de l'overlay pour ne pas gêner la lecture */
     .clients-image-wrapper::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: auto;
-        width: 120px; /* Overlay seulement sous le bouton */
-        height: 60px; /* Réduit la hauteur */
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.3));
+        width: 120px;
+        height: 60px;
         border-radius: 0 0 20px 0;
-        pointer-events: none;
-        z-index: 5;
     }
     
     .hero-actions {
@@ -2870,6 +2900,7 @@ ul.nav-menu li {
     }
 
 
+/* Ajustements pour très petits écrans */
 @media (max-width: 480px) {
     .container {
         padding: 0 var(--space-4);
@@ -2917,7 +2948,6 @@ ul.nav-menu li {
         font-size: 13px;
         border-radius: 20px;
         min-width: 90px;
-        border: 2px solid white;
     }
     
     .clients-image-wrapper::before {
@@ -3018,9 +3048,7 @@ ul.nav-menu li {
 
 }
 
-/* === REPOSITIONNEMENT DU BOUTON POUR NE PAS CACHER LE TEXTE === */
-
-/* Alternative : Bouton en dehors de l'image pour très petits écrans */
+/* Alternative pour très petits écrans : bouton en dehors */
 @media (max-width: 400px) {
     .clients-image-section {
         position: relative;
@@ -3036,11 +3064,8 @@ ul.nav-menu li {
         margin-left: auto;
         margin-right: auto;
         backdrop-filter: none;
-        background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
     }
     
-    /* Supprime l'overlay quand le bouton est en dehors */
     .clients-image-wrapper::before {
         display: none;
     }
