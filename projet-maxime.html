@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Maxime - Application Fitness | Popey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="images/Popey!!.png" alt="Logo Popey" class="logo-icon">
+                        <span class="brand-text">Popey</span>
+                    </div>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="talents.html">Talents</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-header">
+                <div class="project-info">
+                    <h1>Application Mobile de Coaching Fitness</h1>
+                    <p class="project-subtitle">Par Maxime - Coach Sportif Certifié</p>
+                    <div class="project-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 25%"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span class="current">2 500€</span>
+                            <span class="target">/ 10 000€ collectés</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-video">
+                    <video controls poster="images/maxime-project.jpg">
+                        <source src="images/maxime-project.mp4" type="video/mp4">
+                        Présentation du projet
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Description -->
+    <section class="project-description">
+        <div class="container">
+            <h2>Description du Projet</h2>
+            <div class="description-content">
+                <p>Développement d'une application mobile de coaching fitness personnalisé qui combine suivi d'entraînement, nutrition et motivation. L'app propose des programmes adaptés à chaque utilisateur avec suivi en temps réel et coaching virtuel.</p>
+                
+                <h3>Fonctionnalités Principales :</h3>
+                <ul>
+                    <li>💪 Programmes d'entraînement personnalisés</li>
+                    <li>📊 Suivi des performances et statistiques</li>
+                    <li>🥗 Plans nutritionnels adaptés aux objectifs</li>
+                    <li>🎯 Défis et objectifs motivants</li>
+                    <li>📱 Coaching virtuel avec Maxime</li>
+                    <li>👥 Communauté d'entraide et partage</li>
+                </ul>
+
+                <h3>Marché Cible :</h3>
+                <p>Personnes souhaitant se remettre en forme avec un accompagnement professionnel accessible. Le marché du fitness digital représente 1,8 milliards d'euros en France avec une croissance de 15% par an.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Tiers -->
+    <section class="investment-tiers">
+        <div class="container">
+            <h2>Paliers d'Investissement</h2>
+            <div class="tiers-grid">
+                
+                <div class="tier-card">
+                    <div class="tier-amount">50€</div>
+                    <h3>Motivé</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès gratuit pendant 3 mois</li>
+                        <li>✅ Programme d'entraînement personnalisé</li>
+                        <li>✅ Retour estimé : 70€ (40% de gain)</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(50)">J'investis 50€</button>
+                </div>
+
+                <div class="tier-card popular">
+                    <div class="tier-badge">Populaire</div>
+                    <div class="tier-amount">100€</div>
+                    <h3>Sportif</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès gratuit pendant 6 mois</li>
+                        <li>✅ Session coaching vidéo avec Maxime</li>
+                        <li>✅ Retour estimé : 150€ (50% de gain)</li>
+                        <li>✅ Plan nutritionnel personnalisé</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(100)">J'investis 100€</button>
+                </div>
+
+                <div class="tier-card">
+                    <div class="tier-amount">300€</div>
+                    <h3>Athlète</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Accès à vie à l'application</li>
+                        <li>✅ Coaching mensuel personnalisé</li>
+                        <li>✅ Retour estimé : 450€ (50% de gain)</li>
+                        <li>✅ Accès aux fonctionnalités premium</li>
+                        <li>✅ Suivi nutritionnel avancé</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(300)">J'investis 300€</button>
+                </div>
+
+                <div class="tier-card premium">
+                    <div class="tier-amount">500€</div>
+                    <h3>Champion</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Tous les avantages précédents</li>
+                        <li>✅ Retour estimé : 800€ (60% de gain)</li>
+                        <li>✅ Coaching illimité avec Maxime</li>
+                        <li>✅ Participation aux décisions produit</li>
+                        <li>✅ Accès aux bêta-tests</li>
+                        <li>✅ Commission sur les parrainages (2%)</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(500)">J'investis 500€</button>
+                </div>
+
+                <div class="tier-card exclusive">
+                    <div class="tier-amount">1000€+</div>
+                    <h3>Co-Fondateur</h3>
+                    <ul class="tier-benefits">
+                        <li>✅ Retour estimé : 70% de gain minimum</li>
+                        <li>✅ Participation aux bénéfices (2-5%)</li>
+                        <li>✅ Licence de revente régionale</li>
+                        <li>✅ Formation complète aux méthodes</li>
+                        <li>✅ Co-création de programmes</li>
+                        <li>✅ Nom dans les crédits de l'app</li>
+                    </ul>
+                    <button class="btn-invest" onclick="investAmount(1000)">J'investis 1000€+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Information -->
+    <section class="risk-info">
+        <div class="container">
+            <h2>Informations sur les Risques et Retours</h2>
+            <div class="risk-content">
+                <div class="risk-section">
+                    <h3>🎯 Retours Attendus</h3>
+                    <ul>
+                        <li>ROI estimé entre 40% et 70% sur 12-18 mois</li>
+                        <li>Modèle freemium avec abonnements premium</li>
+                        <li>Marché en forte croissance post-COVID</li>
+                        <li>Expertise reconnue de Maxime dans le domaine</li>
+                    </ul>
+                </div>
+                
+                <div class="risk-section">
+                    <h3>⚠️ Risques Identifiés</h3>
+                    <ul>
+                        <li>Concurrence forte (Nike Training, Freeletics)</li>
+                        <li>Coût d'acquisition d'utilisateurs élevé</li>
+                        <li>Dépendance aux stores d'applications</li>
+                        <li>Nécessité de contenu régulier</li>
+                        <li>Évolution des tendances fitness</li>
+                    </ul>
+                </div>
+
+                <div class="risk-section">
+                    <h3>🛡️ Avantages Concurrentiels</h3>
+                    <ul>
+                        <li>Coaching personnalisé par un vrai coach</li>
+                        <li>Approche holistique (sport + nutrition + mental)</li>
+                        <li>Communauté locale et bienveillante</li>
+                        <li>Prix accessible comparé au coaching privé</li>
+                        <li>Partenariats avec salles de sport locales</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="disclaimer">
+                <p><strong>Avertissement :</strong> Tout investissement comporte des risques. Les retours mentionnés sont des estimations et ne constituent pas une garantie. Investissez uniquement des montants que vous pouvez vous permettre de perdre.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function investAmount(amount) {
+            alert(`Redirection vers le paiement pour un investissement de ${amount}€`);
+            // window.location.href = `payment.html?amount=${amount}&project=maxime`;
+        }
+    </script>
+</body>
+</html>
