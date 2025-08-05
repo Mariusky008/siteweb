@@ -1085,6 +1085,218 @@ body {
     line-height: 1.7;
 }
 
+/* === SECTION COMMENT ÇA MARCHE === */
+.how-it-works {
+    padding: var(--space-24) 0;
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #334155 100%);
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.how-it-works::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(242, 117, 10, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+}
+
+.how-it-works .section-badge {
+    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+    border: 2px solid var(--primary-300);
+    color: white;
+    box-shadow: 0 8px 32px rgba(242, 117, 10, 0.3);
+}
+
+.how-it-works .section-badge::after {
+    content: '🚀';
+    margin-left: var(--space-2);
+    font-size: 16px;
+}
+
+.how-it-works .section-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.how-it-works .section-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.how-it-works-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+    position: relative;
+    z-index: 2;
+}
+
+.process-step {
+    flex: 1;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: var(--space-10);
+    text-align: center;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.process-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-500), #3B82F6, #10B981);
+    opacity: 0;
+    transition: var(--transition-normal);
+}
+
+.process-step:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+}
+
+.process-step:hover::before {
+    opacity: 1;
+}
+
+.step-icon {
+    font-size: 72px;
+    margin-bottom: var(--space-6);
+    display: block;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+    transition: var(--transition-normal);
+}
+
+.process-step:hover .step-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.step-content h3 {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: var(--space-4);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.step-content p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+    font-size: 16px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.how-it-works-visual {
+    position: relative;
+    z-index: 2;
+    margin-top: var(--space-16);
+}
+
+.interaction-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-8);
+    flex-wrap: wrap;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    padding: var(--space-10);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    text-align: center;
+    min-width: 160px;
+    transition: var(--transition-normal);
+}
+
+.flow-step:hover {
+    transform: translateY(-4px);
+}
+
+.flow-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+    color: white;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 24px;
+    box-shadow: 
+        0 8px 24px rgba(242, 117, 10, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transition: var(--transition-normal);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.flow-step:hover .flow-number {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 
+        0 12px 32px rgba(242, 117, 10, 0.6),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.flow-text {
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.flow-arrow {
+    font-size: 32px;
+    color: var(--primary-400);
+    font-weight: bold;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    animation: arrowGlow 2s ease-in-out infinite;
+}
+
+@keyframes arrowGlow {
+    0%, 100% { 
+        opacity: 0.7;
+        transform: translateX(0) scale(1);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    50% { 
+        opacity: 1;
+        transform: translateX(8px) scale(1.1);
+        filter: drop-shadow(0 4px 12px rgba(242, 117, 10, 0.5));
+    }
+}
+
 /* === SECTION EXPÉRIENCE === */
 .experience {
     padding: var(--space-24) 0;
@@ -1855,6 +2067,39 @@ body {
     padding: var(--space-6);
     gap: var(--space-4);
     box-shadow: var(--shadow-lg);
+}
+
+/* Responsive pour la section comment ça marche */
+@media (max-width: 1024px) {
+    .how-it-works-content {
+        flex-direction: column;
+        gap: var(--space-8);
+    }
+}
+
+@media (max-width: 768px) {
+    .interaction-flow {
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+    
+    .flow-arrow {
+        transform: rotate(90deg);
+        font-size: 24px;
+    }
+    
+    .flow-step {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .step-icon {
+        font-size: 56px;
+    }
+    
+    .step-content h3 {
+        font-size: 24px;
+    }
 }
 
 @media (max-width: 768px) {
