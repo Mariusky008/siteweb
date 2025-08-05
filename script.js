@@ -20,19 +20,24 @@ navLinks.forEach(link => {
 // Smooth scrolling pour les liens d'ancrage
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-        e.preventDefault();
         const targetId = link.getAttribute('href');
-        const targetSection = document.querySelector(targetId);
         
-        if (targetSection) {
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const targetPosition = targetSection.offsetTop - headerHeight;
+        // Vérifier si c'est un lien d'ancrage (commence par #) ou un lien externe
+        if (targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
             
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            if (targetSection) {
+                const headerHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         }
+        // Pour les liens externes (comme talents.html), laisser le comportement par défaut
     });
 });
 
