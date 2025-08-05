@@ -96,69 +96,80 @@
                 </div>
             </div>
             
-            <div class="hero-visual">
-                <div class="floating-card card-1">
-                    <div class="card-step-number">1</div>
-                    <div class="card-header">
-                        <div class="card-icon">👩‍💼</div>
-                        <div class="card-status online">En ligne</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Vanessa</div>
-                        <div class="card-subtitle">Coworker chez popey - Bougies bio</div>
-                        <div class="card-project">🕯️ Lance sa boutique en ligne</div>
+            <!-- Nouvelle section avec image clients et bouton -->
+            <div class="hero-visual-container">
+                <div class="clients-image-section">
+                    <div class="clients-image-wrapper">
+                        <img src="clients.webp" alt="Clients Popey" class="clients-image">
+                        <button class="reveal-cards-btn" id="revealCardsBtn">
+                            <span>Clic ici</span>
+                            <div class="btn-shine"></div>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="floating-card card-2">
-                    <div class="card-step-number">2</div>
-                    <div class="card-header">
-                        <div class="card-icon">📊</div>
-                        <div class="card-date">Mardi 23</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Clients de passage au Coffeeshop</div>
-                        <div class="card-number">112</div>
-                     
-                    </div>
-                </div>
-                
-                <div class="floating-card card-3">
-                    <div class="card-step-number">3</div>
-                    <div class="card-header">
-                        <div class="card-icon">🤝</div>
-                        <div class="card-date">Mardi 23</div>
-                    </div>
-                    <div class="card-content">
-                        <div class="card-title">Interactions Vanessa avec clients de passage</div>
-                        <div class="interaction-stats">
-                            <span class="interaction-item">💬 8 interactions</span>
-                           
+                <!-- Cartes flottantes (initialement cachées) -->
+                <div class="hero-visual" id="heroCards" style="display: none;">
+                    <div class="floating-card card-1">
+                        <div class="card-step-number">1</div>
+                        <div class="card-header">
+                            <div class="card-icon">👩‍💼</div>
+                            <div class="card-status online">En ligne</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Vanessa</div>
+                            <div class="card-subtitle">Coworker chez popey - Bougies bio</div>
+                            <div class="card-project">🕯️ Lance sa boutique en ligne</div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Carte 4: Résultats (conclusion) -->
-                <div class="floating-card card-4">
-                    <div class="card-step-number">4</div>
-                    <div class="card-header">
-                        <div class="card-icon">💰</div>
-                        <div class="card-status success">Succès</div>
+                    
+                    <div class="floating-card card-2">
+                        <div class="card-step-number">2</div>
+                        <div class="card-header">
+                            <div class="card-icon">📊</div>
+                            <div class="card-date">Mardi 23</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Clients de passage au Coffeeshop</div>
+                            <div class="card-number">112</div>
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <div class="card-title">Résultats Mardi 23 pour Vanessa</div>
-                        <div class="results-grid">
-                            <div class="result-item">
-                                <span class="result-number">3</span>
-                                <span class="result-label">Achats</span>
+                    
+                    <div class="floating-card card-3">
+                        <div class="card-step-number">3</div>
+                        <div class="card-header">
+                            <div class="card-icon">🤝</div>
+                            <div class="card-date">Mardi 23</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Interactions Vanessa avec clients de passage</div>
+                            <div class="interaction-stats">
+                                <span class="interaction-item">💬 8 interactions</span>
                             </div>
-                            <div class="result-item">
-                                <span class="result-number">2</span>
-                                <span class="result-label">Dons</span>
-                            </div>
-                            <div class="result-item">
-                                <span class="result-number">0</span>
-                                <span class="result-label">Investisseurs</span>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-card card-4">
+                        <div class="card-step-number">4</div>
+                        <div class="card-header">
+                            <div class="card-icon">💰</div>
+                            <div class="card-status success">Succès</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-title">Résultats Mardi 23 pour Vanessa</div>
+                            <div class="results-grid">
+                                <div class="result-item">
+                                    <span class="result-number">3</span>
+                                    <span class="result-label">Achats</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">2</span>
+                                    <span class="result-label">Dons</span>
+                                </div>
+                                <div class="result-item">
+                                    <span class="result-number">0</span>
+                                    <span class="result-label">Investisseurs</span>
+                                </div>
                             </div>
                         </div>
                     </div>
