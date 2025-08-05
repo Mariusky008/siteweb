@@ -1790,21 +1790,19 @@ body {
 /* === FOOTER MODERNE === */
 .footer {
     background: var(--neutral-900);
-    color: var(--neutral-300);
-    padding: var(--space-20) 0 var(--space-8);
+    color: white;
 }
 
-.footer-content {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 var(--space-6);
-}
-
+/* Section principale du footer */
 .footer-main {
+    padding: var(--section-padding-lg) 0 var(--space-8);
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: var(--space-16);
-    margin-bottom: var(--space-12);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: var(--space-6);
+    padding-right: var(--space-6);
 }
 
 .footer-brand .brand-text {
@@ -1819,6 +1817,7 @@ body {
 .social-links {
     display: flex;
     gap: var(--space-3);
+    margin-bottom: var(--space-4);
 }
 
 .social-link {
@@ -1832,11 +1831,13 @@ body {
     text-decoration: none;
     font-size: 18px;
     transition: var(--transition-fast);
+    color: var(--neutral-400);
 }
 
 .social-link:hover {
     background: var(--primary-600);
     transform: translateY(-2px);
+    color: white;
 }
 
 .footer-links {
@@ -1863,28 +1864,106 @@ body {
     color: var(--primary-400);
 }
 
-.footer-bottom {
+/* Section légale séparée */
+.footer-legal-section {
+    background: var(--neutral-950);
+    border-top: 1px solid var(--neutral-800);
+    padding: var(--space-6) 0;
+}
+
+.footer-legal-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: var(--space-8);
-    border-top: 1px solid var(--neutral-800);
+    flex-wrap: wrap;
+    gap: var(--space-4);
 }
 
-.footer-legal {
+.footer-copyright {
+    color: var(--neutral-500);
+    font-size: 14px;
+}
+
+.footer-legal-links {
     display: flex;
     gap: var(--space-6);
+    flex-wrap: wrap;
 }
 
-.footer-legal a {
+.footer-legal-links a {
     color: var(--neutral-500);
     text-decoration: none;
     font-size: 14px;
     transition: var(--transition-fast);
 }
 
-.footer-legal a:hover {
+.footer-legal-links a:hover {
     color: var(--neutral-300);
+}
+
+/* Section newsletter */
+.newsletter-section {
+    background: var(--neutral-800);
+    border-top: 1px solid var(--neutral-700);
+    padding: var(--space-8) 0;
+}
+
+.newsletter-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: var(--space-8);
+    align-items: center;
+}
+
+.newsletter-info h3 {
+    color: white;
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-2);
+}
+
+.newsletter-info p {
+    color: var(--neutral-400);
+    margin: 0;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.newsletter-form input {
+    padding: var(--space-3) var(--space-4);
+    border: 1px solid var(--neutral-600);
+    border-radius: 8px;
+    background: var(--neutral-700);
+    color: white;
+    min-width: 250px;
+}
+
+.newsletter-form input::placeholder {
+    color: var(--neutral-400);
+}
+
+.btn-newsletter {
+    padding: var(--space-3) var(--space-6);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.btn-newsletter:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 /* === VIDEO CONTAINER STYLES === */
@@ -2095,6 +2174,33 @@ body {
     .footer-main {
         grid-template-columns: 1fr;
         gap: var(--space-8);
+        text-align: center;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .footer-legal-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-3);
+    }
+    
+    .newsletter-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-6);
+    }
+    
+    .newsletter-form {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .newsletter-form input {
+        min-width: 200px;
     }
     
     .hero-visual {
@@ -2272,15 +2378,20 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .footer-links {
-        grid-template-columns: 1fr;
-        gap: var(--space-6);
+    .footer-legal-links {
+        flex-direction: column;
+        gap: var(--space-3);
+        text-align: center;
     }
     
-    .footer-bottom {
+    .newsletter-form {
         flex-direction: column;
-        gap: var(--space-4);
-        text-align: center;
+        align-items: center;
+    }
+    
+    .newsletter-form input {
+        width: 100%;
+        max-width: 300px;
     }
     
     .concept-title {
@@ -2660,6 +2771,506 @@ body {
 .floating-card.card-3:hover { z-index: 13 !important; }
 .floating-card.card-4:hover { z-index: 12 !important; }
 .floating-card.card-5:hover { z-index: 11 !important; }
+
+/* === PAGE MÉCÉNAT === */
+.mecenat-hero {
+    padding: 120px 0 var(--section-padding-md);
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--neutral-50) 100%);
+    text-align: center;
+}
+
+.mecenat-hero h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-4);
+}
+
+.mecenat-hero .hero-subtitle {
+    font-size: var(--text-xl);
+    color: var(--neutral-600);
+    max-width: 600px;
+    margin: 0 auto var(--space-6);
+}
+
+/* === PROCESSUS MÉCÉNAT === */
+.mecenat-process {
+    padding: var(--section-padding-lg) 0;
+    background: white;
+}
+
+.mecenat-process h2 {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-4);
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: var(--text-lg);
+    color: var(--neutral-600);
+    margin-bottom: var(--space-12);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background: white;
+    border-radius: 20px;
+    padding: var(--space-8);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border: 2px solid var(--neutral-100);
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-bold);
+    font-size: var(--text-lg);
+}
+
+.step-icon {
+    font-size: 48px;
+    margin: var(--space-4) 0;
+}
+
+.step-card h3 {
+    font-size: var(--text-2xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-3);
+}
+
+.step-card p {
+    color: var(--neutral-600);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+}
+
+.support-options {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    margin-top: var(--space-4);
+}
+
+.support-option {
+    background: var(--primary-50);
+    padding: var(--space-3) var(--space-4);
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--primary-200);
+}
+
+.support-option strong {
+    display: block;
+    color: var(--primary-700);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-1);
+}
+
+.support-option span {
+    font-size: var(--text-sm);
+    color: var(--primary-600);
+}
+
+.btn-step {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-3) var(--space-6);
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: var(--font-semibold);
+    transition: var(--transition-normal);
+}
+
+.btn-step:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* === AVANTAGES MÉCÈNES === */
+.mecenat-benefits {
+    padding: var(--section-padding-lg) 0;
+    background: var(--neutral-50);
+}
+
+.mecenat-benefits h2 {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-12);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+}
+
+.benefit-card {
+    background: white;
+    border-radius: 16px;
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+}
+
+.benefit-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.benefit-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-4);
+}
+
+.benefit-card h3 {
+    font-size: var(--text-xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-3);
+}
+
+.benefit-card p {
+    color: var(--neutral-600);
+    margin-bottom: var(--space-4);
+    line-height: 1.6;
+}
+
+.benefit-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.benefit-card li {
+    padding: var(--space-2) 0;
+    color: var(--neutral-700);
+    border-bottom: 1px solid var(--neutral-200);
+    position: relative;
+    padding-left: var(--space-6);
+}
+
+.benefit-card li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-600);
+    font-weight: var(--font-bold);
+}
+
+.benefit-card li:last-child {
+    border-bottom: none;
+}
+
+/* === TÉMOIGNAGES MÉCÈNES === */
+.mecenat-testimonials {
+    padding: var(--section-padding-lg) 0;
+    background: white;
+}
+
+.mecenat-testimonials h2 {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-12);
+}
+
+/* === CONTACT MÉCÉNAT === */
+.mecenat-contact {
+    padding: var(--section-padding-lg) 0;
+    background: var(--neutral-900) !important;
+    color: white !important;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+    align-items: start;
+}
+
+.contact-info h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: white !important;
+    margin-bottom: var(--space-4);
+}
+
+.contact-info p {
+    font-size: var(--text-lg);
+    color: var(--neutral-300) !important;
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+}
+
+.contact-icon {
+    font-size: 24px;
+    margin-top: var(--space-1);
+}
+
+.contact-item strong {
+    display: block;
+    color: white !important;
+    margin-bottom: var(--space-1);
+    font-weight: var(--font-semibold);
+}
+
+.contact-item span {
+    color: var(--neutral-300) !important;
+    line-height: 1.4;
+}
+
+/* Alternative avec couleurs plus contrastées */
+.mecenat-contact .contact-info h2 {
+    color: #ffffff !important;
+}
+
+.mecenat-contact .contact-info p {
+    color: #e5e5e5 !important;
+}
+
+.mecenat-contact .contact-item strong {
+    color: #ffffff !important;
+}
+
+.mecenat-contact .contact-item span {
+    color: #cccccc !important;
+}
+
+/* === SECTION CONTACT MÉCÉNAT REDESIGN === */
+.mecenat-contact-redesign {
+    padding: var(--section-padding-lg) 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.mecenat-contact-redesign::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+    pointer-events: none;
+}
+
+.contact-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.contact-header h2 {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    color: #ffffff;
+    margin-bottom: var(--space-6);
+    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.contact-description {
+    font-size: var(--text-xl);
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    align-items: start;
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.contact-card:hover::before {
+    left: 100%;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card-icon {
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+}
+
+.contact-card-content h4 {
+    color: #ffffff;
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-2);
+}
+
+.contact-card-content a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: var(--text-base);
+    transition: color var(--transition-fast);
+}
+
+.contact-card-content a:hover {
+    color: #ffffff;
+}
+
+.contact-card-content p {
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* === FORMULAIRE CONTACT === */
+.contact-form {
+    background: white;
+    border-radius: 20px;
+    padding: var(--space-8);
+    box-shadow: var(--shadow-xl);
+}
+
+.mecenat-form h3 {
+    font-size: var(--text-2xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-6);
+    text-align: center;
+    font-family: var(--font-display);
+}
+
+.form-group {
+    margin-bottom: var(--space-4);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.form-group label {
+    display: block;
+    font-weight: var(--font-semibold);
+    color: var(--neutral-700);
+    margin-bottom: var(--space-2);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: var(--space-3);
+    border: 2px solid var(--neutral-200);
+    border-radius: 8px;
+    font-size: var(--text-base);
+    transition: var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px var(--primary-100);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
 
 /* Numéros de déroulement pour les cartes flottantes - Version épurée */
 .card-step-number {
@@ -3358,6 +3969,200 @@ body {
     line-height: 1.3;
 }
 
+/* === SECTIONS TALENT === */
+.talent-bio {
+    padding: var(--section-padding-md) 0;
+    background: var(--neutral-50);
+}
+
+.bio-card {
+    background: white;
+    border-radius: 20px;
+    padding: var(--space-8);
+    box-shadow: var(--shadow-lg);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.bio-info h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-2);
+}
+
+.bio-title {
+    font-size: var(--text-lg);
+    color: var(--primary-600);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-6);
+}
+
+.bio-details h4 {
+    font-size: var(--text-xl);
+    color: var(--neutral-800);
+    margin: var(--space-4) 0 var(--space-2) 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.bio-details ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: var(--space-4);
+}
+
+.bio-details li {
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--neutral-200);
+    color: var(--neutral-700);
+}
+
+.bio-details li:last-child {
+    border-bottom: none;
+}
+
+/* === TÉMOIGNAGES === */
+.testimonials {
+    padding: var(--section-padding-md) 0;
+    background: linear-gradient(135deg, var(--primary-50) 0%, var(--neutral-50) 100%);
+}
+
+.testimonials h2 {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-12);
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 16px;
+    padding: var(--space-6);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 60px;
+    color: var(--primary-200);
+    font-family: var(--font-display);
+    line-height: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.testimonial-content p {
+    font-style: italic;
+    color: var(--neutral-700);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+    font-size: var(--text-lg);
+}
+
+.testimonial-author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
+.testimonial-author strong {
+    color: var(--neutral-900);
+    font-weight: var(--font-semibold);
+}
+
+.testimonial-author span {
+    color: var(--neutral-500);
+    font-size: var(--text-sm);
+}
+
+/* === CITATIONS INSPIRANTES === */
+.inspirational-quotes {
+    padding: var(--section-padding-md) 0;
+    background: var(--neutral-900);
+    color: white;
+}
+
+.inspirational-quotes h2 {
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    color: white;
+    margin-bottom: var(--space-12);
+}
+
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-8);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quote-card {
+    text-align: center;
+    padding: var(--space-8);
+    border-radius: 20px;
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+.quote-text {
+    position: relative;
+    z-index: 2;
+}
+
+.quote-text p {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+    color: white;
+}
+
+.quote-author {
+    font-weight: var(--font-semibold);
+    color: var(--primary-100);
+    position: relative;
+    z-index: 2;
+}
+
 /* === NOUVELLES SECTIONS TALENTS === */
 
 
@@ -3460,7 +4265,23 @@ body {
 }
 
 /* Responsive */
+/* === RESPONSIVE === */
 @media (max-width: 768px) {
+    .testimonials-grid,
+    .quotes-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .bio-card {
+        padding: var(--space-6);
+        margin: 0 var(--space-4);
+    }
+    
+    .quote-text p {
+        font-size: var(--text-lg);
+    }
+    
     .talent-info {
         padding: var(--space-4);
     }
@@ -3727,6 +4548,129 @@ body {
     .risk-content {
         grid-template-columns: 1fr;
     }
+    
+    /* === RESPONSIVE MÉCÉNAT === */
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .support-options {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* === BOUTON SOUMISSION MÉCÉNAT === */
+.btn-submit-mecenat {
+    width: 100%;
+    padding: var(--space-4) var(--space-6);
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    margin-top: var(--space-4);
+}
+
+.btn-submit-mecenat:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-submit-mecenat:active {
+    transform: translateY(0);
+}
+
+/* === MEDIA QUERIES MÉCÉNAT === */
+@media (max-width: 1024px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+    }
+    
+    .process-steps {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--space-6);
+    }
+}
+
+@media (max-width: 768px) {
+    .mecenat-hero {
+        padding: 80px 0 var(--section-padding-sm);
+    }
+    
+    .mecenat-hero h1 {
+        font-size: var(--text-4xl);
+    }
+    
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
+    }
+    
+    .contact-form {
+        padding: var(--space-6);
+    }
+    
+    .support-options {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+    
+    .step-card {
+        padding: var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .mecenat-hero h1 {
+        font-size: var(--text-3xl);
+    }
+    
+    .mecenat-hero .hero-subtitle {
+        font-size: var(--text-lg);
+    }
+    
+    .step-card {
+        padding: var(--space-4);
+    }
+    
+    .contact-form {
+        padding: var(--space-4);
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: var(--text-base);
+    }
 }
 
 /* Amélioration des sections d'investissement dans talents.html */
@@ -3922,71 +4866,7 @@ body {
     text-align: center;
 }
 
-/* Newsletter Section */
-.newsletter-section {
-    background: var(--gradient-primary);
-    padding: var(--space-12) 0;
-    margin-top: var(--space-8);
-}
 
-.newsletter-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 var(--space-6);
-    gap: var(--space-8);
-}
-
-.newsletter-info h3 {
-    color: white;
-    font-size: var(--text-2xl);
-    font-weight: 600;
-    margin-bottom: var(--space-2);
-}
-
-.newsletter-info p {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 16px;
-}
-
-.newsletter-form {
-    display: flex;
-    gap: var(--space-3);
-    min-width: 400px;
-}
-
-.newsletter-form input {
-    flex: 1;
-    padding: var(--space-3) var(--space-4);
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    background: white;
-    color: var(--neutral-900);
-}
-
-.newsletter-form input::placeholder {
-    color: var(--neutral-500);
-}
-
-.btn-newsletter {
-    padding: var(--space-3) var(--space-6);
-    background: var(--neutral-900);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: var(--transition-fast);
-    white-space: nowrap;
-}
-
-.btn-newsletter:hover {
-    background: var(--neutral-800);
-    transform: translateY(-1px);
-}
 
 /* Amélioration des icônes sociales */
 .social-link svg {
@@ -3997,20 +4877,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Responsive Newsletter */
-@media (max-width: 768px) {
-    .newsletter-content {
-        flex-direction: column;
-        text-align: center;
-        gap: var(--space-6);
-    }
-    
-    .newsletter-form {
-        min-width: auto;
-        width: 100%;
-        max-width: 400px;
-    }
-}
+
 
 /* Modal Mentions Légales */
 .modal {
@@ -4172,5 +5039,338 @@ body {
     
     .modal-body {
         padding: var(--space-6);
+    }
+}
+
+/* === STYLES FORCÉS CONTACT MÉCÉNAT === */
+#contact-mecenat {
+    background: #171717 !important;
+    color: #ffffff !important;
+}
+
+#contact-mecenat h2 {
+    color: #ffffff !important;
+}
+
+#contact-mecenat p {
+    color: #e5e5e5 !important;
+}
+
+#contact-mecenat .contact-item strong {
+    color: #ffffff !important;
+}
+
+#contact-mecenat .contact-item span {
+    color: #cccccc !important;
+}
+
+/* === PAGE CONTACT === */
+.contact-hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--neutral-900) 0%, var(--neutral-800) 100%);
+    padding: 120px 0 80px;
+    overflow: hidden;
+}
+
+.contact-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-hero-title {
+    font-size: var(--text-5xl);
+    font-weight: var(--font-bold);
+    color: white;
+    margin: var(--space-6) 0 var(--space-4);
+    font-family: var(--font-display);
+}
+
+.contact-hero-subtitle {
+    font-size: var(--text-xl);
+    color: var(--neutral-300);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-main {
+    padding: var(--section-padding-lg) 0;
+    background: var(--neutral-50);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-16);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-4);
+    font-family: var(--font-display);
+}
+
+.contact-info > p {
+    font-size: var(--text-lg);
+    color: var(--neutral-600);
+    margin-bottom: var(--space-8);
+    line-height: 1.6;
+}
+
+.contact-cards {
+    display: grid;
+    gap: var(--space-6);
+}
+
+.contact-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-fast);
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+}
+
+.contact-card-content h3 {
+    font-size: var(--text-lg);
+    font-weight: var(--font-semibold);
+    color: var(--neutral-900);
+    margin: 0 0 var(--space-2);
+}
+
+.contact-card-content p {
+    font-size: var(--text-base);
+    color: var(--neutral-600);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.contact-card-content a {
+    color: var(--primary-600);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+.contact-card-content a:hover {
+    color: var(--primary-700);
+}
+
+.contact-form-container {
+    background: white;
+    padding: var(--space-8);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+}
+
+.contact-form-header h2 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-3);
+    font-family: var(--font-display);
+}
+
+.contact-form-header p {
+    font-size: var(--text-base);
+    color: var(--neutral-600);
+    margin-bottom: var(--space-8);
+    line-height: 1.5;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--neutral-700);
+    margin-bottom: var(--space-2);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: var(--space-3) var(--space-4);
+    border: 2px solid var(--neutral-200);
+    border-radius: 12px;
+    font-size: var(--text-base);
+    transition: var(--transition-fast);
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.checkbox-group {
+    flex-direction: row !important;
+    align-items: flex-start;
+    gap: var(--space-3);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--neutral-600);
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.btn-full {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+}
+
+.contact-map {
+    padding: var(--section-padding-lg) 0;
+    background: white;
+}
+
+.map-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-12);
+}
+
+.map-header h2 {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--neutral-900);
+    margin-bottom: var(--space-4);
+    font-family: var(--font-display);
+}
+
+.map-header p {
+    font-size: var(--text-lg);
+    color: var(--neutral-600);
+    line-height: 1.6;
+}
+
+.map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-hero-title {
+        font-size: var(--text-4xl);
+    }
+    
+    .contact-form-container {
+        padding: var(--space-6);
+    }
+}
+
+/* === RESPONSIVE CONTACT REDESIGN === */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-12);
+    }
+    
+    .contact-cards {
+        order: 2;
+    }
+    
+    .contact-form {
+        order: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-header h2 {
+        font-size: var(--text-4xl);
+    }
+    
+    .contact-description {
+        font-size: var(--text-lg);
+    }
+    
+    .contact-card {
+        padding: var(--space-4);
+    }
+    
+    .contact-card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
     }
 }
