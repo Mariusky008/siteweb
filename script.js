@@ -718,3 +718,408 @@ if (window.location.hostname === 'localhost') {
 console.log('🎭 Popey Landing Page chargée avec succès!');
 console.log('📱 Responsive design activé');
 console.log('🚀 Prêt pour la V2 avec mur interactif');
+
+
+// Mentions Légales Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const mentionsLink = document.getElementById('mentions-legales-link');
+    const modal = document.getElementById('mentions-legales-modal');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Ouvrir la modal
+    if (mentionsLink) {
+        mentionsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Empêcher le scroll
+        });
+    }
+
+    // Fermer la modal
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Réactiver le scroll
+        });
+    }
+
+    // Fermer en cliquant en dehors
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Fermer avec la touche Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+// RGPD Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const rgpdLink = document.getElementById('rgpd-link');
+    const modal = document.getElementById('rgpd-modal');
+    const closeModal = modal?.querySelector('.close-modal');
+
+    // Ouvrir la modal
+    if (rgpdLink) {
+        rgpdLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    // Fermer la modal
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Fermer en cliquant en dehors
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Fermer avec la touche Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+// Politique de Confidentialité Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const politiqueLink = document.getElementById('politique-confidentialite-link');
+    const modal = document.getElementById('politique-confidentialite-modal');
+    const closeModal = modal?.querySelector('.close-modal');
+
+    // Ouvrir la modal
+    if (politiqueLink) {
+        politiqueLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    // Fermer la modal
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Fermer en cliquant en dehors
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Fermer avec la touche Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});
+
+// CGU Modal
+document.addEventListener('DOMContentLoaded', function() {
+    const cguLink = document.getElementById('cgu-link');
+    const modal = document.getElementById('cgu-modal');
+    const closeModal = modal?.querySelector('.close-modal');
+
+    // Ouvrir la modal
+    if (cguLink) {
+        cguLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    }
+
+    // Fermer la modal
+    if (closeModal) {
+        closeModal.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Fermer en cliquant en dehors
+    window.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Fermer avec la touche Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Liens internes vers autres modals depuis CGU
+    const linkToPolitique = modal?.querySelector('#link-to-politique');
+    const linkToRgpd = modal?.querySelector('#link-to-rgpd');
+    
+    if (linkToPolitique) {
+        linkToPolitique.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'none';
+            document.getElementById('politique-confidentialite-modal').style.display = 'block';
+        });
+    }
+    
+    if (linkToRgpd) {
+        linkToRgpd.addEventListener('click', function(e) {
+            e.preventDefault();
+            modal.style.display = 'none';
+            document.getElementById('rgpd-modal').style.display = 'block';
+        });
+    }
+});
+
+// Gestion de la modale des cookies
+const cookiesLink = document.getElementById('cookies-link');
+const cookiesModal = document.getElementById('cookies-modal');
+const cookiesCloseModal = cookiesModal?.querySelector('.close-modal');
+
+if (cookiesLink && cookiesModal) {
+    // Ouvrir la modale
+    cookiesLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        cookiesModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+
+    // Fermer la modale avec le bouton X
+    if (cookiesCloseModal) {
+        cookiesCloseModal.addEventListener('click', function() {
+            cookiesModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    }
+
+    // Fermer en cliquant en dehors de la modale
+    window.addEventListener('click', function(e) {
+        if (e.target === cookiesModal) {
+            cookiesModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Fermer avec la touche Escape
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && cookiesModal.style.display === 'block') {
+            cookiesModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
+
+// Gestion des liens internes dans les modales
+const linkToPolitique = document.getElementById('link-to-politique');
+const linkToRgpd = document.getElementById('link-to-rgpd');
+const politiqueModal = document.getElementById('politique-confidentialite-modal');
+const rgpdModal = document.getElementById('rgpd-modal');
+
+if (linkToPolitique && politiqueModal) {
+    linkToPolitique.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Fermer la modale actuelle
+        document.querySelector('.modal[style*="block"]').style.display = 'none';
+        // Ouvrir la modale politique de confidentialité
+        politiqueModal.style.display = 'block';
+    });
+}
+
+if (linkToRgpd && rgpdModal) {
+    linkToRgpd.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Fermer la modale actuelle
+        document.querySelector('.modal[style*="block"]').style.display = 'none';
+        // Ouvrir la modale RGPD
+        rgpdModal.style.display = 'block';
+    });
+}
+
+// Gestion de la modale "Devenir talent"
+document.addEventListener('DOMContentLoaded', function() {
+    const devenirTalentLink = document.getElementById('devenir-talent-link');
+    const devenirTalentModal = document.getElementById('devenir-talent-modal');
+    const closeModal = devenirTalentModal?.querySelector('.close-modal');
+
+    if (devenirTalentLink && devenirTalentModal) {
+        // Ouvrir la modale
+        devenirTalentLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            devenirTalentModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Fermer la modale avec le bouton X
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                devenirTalentModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // Fermer en cliquant en dehors de la modale
+        window.addEventListener('click', function(e) {
+            if (e.target === devenirTalentModal) {
+                devenirTalentModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && devenirTalentModal.style.display === 'block') {
+                devenirTalentModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
+
+// Gestion de la modale "Réserver une salle de meeting"
+document.addEventListener('DOMContentLoaded', function() {
+    const reserverSalleLink = document.getElementById('reserver-salle-link');
+    const reserverSalleModal = document.getElementById('reserver-salle-modal');
+    const closeModal = reserverSalleModal?.querySelector('.close-modal');
+
+    if (reserverSalleLink && reserverSalleModal) {
+        // Ouvrir la modale
+        reserverSalleLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            reserverSalleModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Fermer la modale avec le bouton X
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                reserverSalleModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // Fermer en cliquant en dehors de la modale
+        window.addEventListener('click', function(e) {
+            if (e.target === reserverSalleModal) {
+                reserverSalleModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && reserverSalleModal.style.display === 'block') {
+                reserverSalleModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
+
+// Gestion de la modale "Menu & Tarifs"
+document.addEventListener('DOMContentLoaded', function() {
+    const menuTarifsLink = document.getElementById('menu-tarifs-link');
+    const menuTarifsModal = document.getElementById('menu-tarifs-modal');
+    const closeModal = menuTarifsModal?.querySelector('.close-modal');
+
+    if (menuTarifsLink && menuTarifsModal) {
+        // Ouvrir la modale
+        menuTarifsLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            menuTarifsModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Fermer la modale avec le bouton X
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                menuTarifsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // Fermer en cliquant en dehors de la modale
+        window.addEventListener('click', function(e) {
+            if (e.target === menuTarifsModal) {
+                menuTarifsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && menuTarifsModal.style.display === 'block') {
+                menuTarifsModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
+
+// Gestion de la modale "Réserver une table"
+document.addEventListener('DOMContentLoaded', function() {
+    const reserverTableLink = document.getElementById('reserver-table-link');
+    const reserverTableModal = document.getElementById('reserver-table-modal');
+    const closeModal = reserverTableModal?.querySelector('.close-modal');
+
+    if (reserverTableLink && reserverTableModal) {
+        // Ouvrir la modale
+        reserverTableLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            reserverTableModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Fermer la modale avec le bouton X
+        if (closeModal) {
+            closeModal.addEventListener('click', function() {
+                reserverTableModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+
+        // Fermer en cliquant en dehors de la modale
+        window.addEventListener('click', function(e) {
+            if (e.target === reserverTableModal) {
+                reserverTableModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Fermer avec la touche Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && reserverTableModal.style.display === 'block') {
+                reserverTableModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
