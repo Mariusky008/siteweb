@@ -1,4 +1,4 @@
-// Navigation mobile
+/ Navigation mobile
 const navToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
@@ -1120,6 +1120,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 reserverTableModal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
+        });
+    }
+});
+
+// Gestion du bouton révélateur de cartes
+document.addEventListener('DOMContentLoaded', function() {
+    const revealBtn = document.getElementById('revealCardsBtn');
+    const heroCards = document.getElementById('heroCards');
+    const clientsImageSection = document.querySelector('.clients-image-section');
+    
+    if (revealBtn && heroCards) {
+        revealBtn.addEventListener('click', function() {
+            // Masquer l'image et le bouton avec animation
+            clientsImageSection.style.transition = 'all 0.5s ease';
+            clientsImageSection.style.opacity = '0';
+            clientsImageSection.style.transform = 'scale(0.9)';
+            
+            setTimeout(() => {
+                clientsImageSection.style.display = 'none';
+                
+                // Afficher les cartes avec animation
+                heroCards.classList.add('show');
+                
+                // Animation séquentielle des cartes
+                const cards = heroCards.querySelectorAll('.floating-card');
+                cards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        card.style.transition = 'all 0.6s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 200);
+                });
+            }, 500);
         });
     }
 });
